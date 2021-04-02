@@ -1,0 +1,3 @@
+include ':defaultAppComponents'
+include ':app'
+rootProject.name = "DefaultAppComponents"
