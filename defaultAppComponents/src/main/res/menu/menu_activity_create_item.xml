@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_activity_create_item_commit"
+        android:icon="@drawable/ic_activity_create_item_save"
+        android:title="@android:string/ok"
+        app:showAsAction="always" />
+</menu>

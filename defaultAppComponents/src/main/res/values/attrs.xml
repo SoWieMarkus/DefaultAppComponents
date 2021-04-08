@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="activity_create_item_close_icon_color" format="color"/>
+    <attr name="activity_create_item_save_icon_color" format="color"/>
+
+</resources>
