@@ -12,13 +12,9 @@ import androidx.fragment.app.Fragment;
 public abstract class DefaultFragment  extends Fragment {
 
     @LayoutRes
-    private int layout;
+    private final int layout;
 
     private View view;
-
-    public DefaultFragment() {
-        // Required empty public constructor
-    }
 
     public DefaultFragment(@LayoutRes int layout) {
         this.layout = layout;

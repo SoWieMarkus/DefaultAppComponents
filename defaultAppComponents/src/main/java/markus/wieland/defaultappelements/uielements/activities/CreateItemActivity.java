@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
@@ -27,7 +26,6 @@ public abstract class CreateItemActivity<I extends Serializable> extends Default
 
     @Override
     protected void initialize() {
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_activity_create_item_close);
         }
@@ -50,7 +48,7 @@ public abstract class CreateItemActivity<I extends Serializable> extends Default
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
         } else if (item.getItemId() == R.id.menu_activity_create_item_commit) {
             onCommitItem();
