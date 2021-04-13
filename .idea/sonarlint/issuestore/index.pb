@@ -15,3 +15,7 @@ cdefaultAppComponents/src/main/java/markus/wieland/defaultappelements/api/Reques
 odefaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities/DefaultActivity.java,d\f\df1153eeb4889279cc7f99cc226e88fd08db72ab
 û
 ndefaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/fragments/DefaultFragment.java,1\b\1b6dfa1b0f13bff3c115d1b3aa61b9c4e8909488
+¢
+rdefaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities/CreateItemActivity.java,d\4\d477e9f17493878a281bc3c08c9f2509642c2d2e
+ù
+mdefaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableAdapter.java,d\9\d997f9be7d93a952b55352bac3a933071aae8838

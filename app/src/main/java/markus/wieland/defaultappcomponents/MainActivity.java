@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import markus.wieland.defaultappelements.textinputvalidator.TextInputValidator;
+import markus.wieland.defaultappelements.textinputvalidator.arguments.MaxLengthValidatorArgument;
+import markus.wieland.defaultappelements.textinputvalidator.arguments.MinLengthValidatorArgument;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
