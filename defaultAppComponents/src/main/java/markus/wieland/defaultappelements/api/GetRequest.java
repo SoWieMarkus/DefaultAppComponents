@@ -27,11 +27,11 @@ public class GetRequest<T> extends AsyncTask<Void, Void, Void> {
         this.type = type;
     }
 
-    private T parse(String json) {
+    protected T parse(String json) {
         return gson.fromJson(json, type);
     }
 
-    private String parseResult(HttpURLConnection connection) throws IOException {
+    protected String parseResult(HttpURLConnection connection) throws IOException {
         StringBuilder responseString = new StringBuilder();
         InputStream inputStream = new BufferedInputStream(connection.getInputStream());
 
