@@ -13,7 +13,7 @@ import markus.wieland.defaultappelements.R;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 
-public class QueryableListFragment<H extends QueryableEntity<Long>, G extends DefaultViewHolder<H>, T extends DefaultAdapter<H, G>> extends ListFragment<H, G, T> implements SearchView.OnQueryTextListener {
+public class QueryableListFragment<I, H extends QueryableEntity<I>, G extends DefaultViewHolder<H>, T extends DefaultAdapter<H, G>> extends ListFragment<H, G, T> implements SearchView.OnQueryTextListener {
 
     private final int searchViewId;
 
