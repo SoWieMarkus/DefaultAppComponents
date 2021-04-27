@@ -53,6 +53,16 @@ public class ListFragment<H, G extends DefaultViewHolder<H>, T extends DefaultAd
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
+    @Override
+    public void initializeViews() {
+
+    }
+
+    @Override
+    public void execute() {
+
+    }
+
     public void setOriginalList(List<H> list) {
         this.originalList = list;
     }
