@@ -1,6 +1,5 @@
 package markus.wieland.defaultappelements.api;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -16,12 +15,12 @@ import java.net.URL;
 
 public class GetRequest<T> extends AsyncTask<Void, Void, Void> {
 
-    private final RequestResultListener<T> requestResultListener;
-    private final Gson gson;
-    private final String url;
-    private final Class<T> type;
+    protected final RequestResultListener<T> requestResultListener;
+    protected final Gson gson;
+    protected final String url;
+    protected final Class<T> type;
 
-    public GetRequest(Class<T> type,  String url, RequestResultListener<T> requestResultListener) {
+    public GetRequest(Class<T> type, String url, RequestResultListener<T> requestResultListener) {
         this.requestResultListener = requestResultListener;
         this.url = url;
         this.gson = new Gson();
@@ -57,4 +56,6 @@ public class GetRequest<T> extends AsyncTask<Void, Void, Void> {
         }
         return null;
     }
+
+
 }

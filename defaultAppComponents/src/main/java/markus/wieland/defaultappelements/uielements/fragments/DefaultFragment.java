@@ -9,7 +9,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.fragment.app.Fragment;
 
-public abstract class DefaultFragment  extends Fragment {
+public abstract class DefaultFragment extends Fragment {
 
     @LayoutRes
     private final int layout;
@@ -26,12 +26,18 @@ public abstract class DefaultFragment  extends Fragment {
         view = inflater.inflate(layout, container, false);
         initialize();
         bindViews();
+        initializeViews();
+        execute();
         return view;
     }
 
     public void initialize() {}
 
     public abstract void bindViews();
+
+    public abstract void initializeViews();
+
+    public abstract void execute();
 
     public final <V extends View> V findViewById(@IdRes int id) {
         return view.findViewById(id);
