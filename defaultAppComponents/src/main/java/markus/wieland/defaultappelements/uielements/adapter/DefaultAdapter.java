@@ -17,7 +17,7 @@ import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnIt
 public abstract class DefaultAdapter<T, H extends DefaultViewHolder<T>> extends RecyclerView.Adapter<H> {
 
     protected final List<T> list;
-    protected final OnItemInteractListener<T> onItemInteractListener;
+    protected OnItemInteractListener<T> onItemInteractListener;
 
     public DefaultAdapter(OnItemInteractListener<T> onItemInteractListener) {
         this.onItemInteractListener = onItemInteractListener;
@@ -26,6 +26,10 @@ public abstract class DefaultAdapter<T, H extends DefaultViewHolder<T>> extends 
 
     public View buildViewHolder(@LayoutRes int layout, ViewGroup parent) {
         return LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
+    }
+
+    public void setOnItemInteractListener(OnItemInteractListener<T> onItemInteractListener) {
+        this.onItemInteractListener = onItemInteractListener;
     }
 
     @Override
