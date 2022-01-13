@@ -17,6 +17,29 @@ Example from my <a href="https://github.com/SoWieMarkus/TrackmaniaCOTDApi">Track
 
 http://sowiemarkus.com:8080/cotd/2021/1/29
 
+```javascript
+{
+  id: 192,
+  name: "Cup of the Day 2021-01-29",
+  year: 2021,
+  month: 1,
+  day: 29,
+  startTime: 1611944190,
+  endTime: 1611951390,
+  leaderBoardId: 772,
+  players: 1347,
+  playerResult: [
+    {
+      id: "cotd_player_result_2021_1_29_0",
+      accountId: "4630e91c-85f8-4d8a-9465-f87acc76ae59",
+      displayName: "rustyh1",
+      zone: "{"name":"Upper Austria","flag":"Upper_Austria","parent":{"name":"Austria","flag":"AUT","parent":{"name":"Europe","flag":"europe","parent":     {"name":"World","flag":"WOR"}}}}",
+      position: 0
+    }, ...
+  ]
+}
+```
+
 
 
 
