@@ -114,6 +114,7 @@ public class MyAPI extends API {
     }
 
 ```
+The GetRequest is an AsyncTask. It will get the API result, parse the json string with the GSON library into an instance of our model class and will notify the API class when its finished. The API class will notify the activity via the notifyClient function.
 
 #### 3. Class API
   
@@ -156,6 +157,7 @@ public void onLoad(ModelClass2 result){}
   
 ```
 
+## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/textinputvalidator">TextInputValidator</a>
 
 
 
