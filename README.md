@@ -271,7 +271,7 @@ Based on this DefaultActivity I have created the <a href="https://github.com/SoW
   
 ```java
   
-public class MyItem implements Serializeable {}
+public class MyItem implements Serializable {}
 
 // Start the CreateItemActivity from parent activity
 // edit
