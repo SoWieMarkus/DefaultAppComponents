@@ -40,6 +40,51 @@ http://sowiemarkus.com:8080/cotd/2021/1/29
 }
 ```
 
+In this example you need two model classes. Name the variable exactly like they will be returned from the API. If you don't want to use the variable name from the API (because it doesn't fit the style guide or something like that) you can use the GSON library and annotate the corresponding field with @SerializedName("<api variable name>")
+
+```java
+
+public class CupResults {
+    private long id;
+    private String name;
+    private int year;
+    private int month;
+    private int day;
+    private long startTime;
+    private long endTime;
+    private long leaderBoardId;
+    private long playsers;
+    
+    // api: playerResult -> its a list, I want to name it playerResults
+    @SerializedName("playerResult")
+    // PlayerResult is a new model class
+    private List<PlayerResult> playerResults;
+  
+    public CupResults(){}
+  
+    // Add getter and setter
+
+
+}
+```
+
+```java
+
+public class PlayerResult {
+    private String id;
+    private String accountId;
+    private String displayName;
+    private String zone;
+    private long position; 
+  
+    public PlayerResult(){}
+  
+    // Add getter and setter
+
+
+}
+```
+
 
 
 
