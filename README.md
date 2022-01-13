@@ -106,12 +106,51 @@ public class MyAPI extends API {
             @Override
             public void onError(Exception e) {
                 // Handle error (I return null so I know something went wrong)
+                // You could also throw exception
                 notifyClient(null, result);
             }
         });
         getRequest.execute();
     }
 
+```
+
+#### 3. Class API
+  
+```java
+  
+public class MainActivity extends AppCompatActivity implements ApiResult<CupResults>{
+  
+    private MyAPI myAPI;
+  
+    ...
+  
+    private void init(){
+        myAPI = new MyAPI(this);
+    }
+  
+    private void search(int year, int month, int day){
+        myAPI.getCupResults(this, year, month, day);
+    }
+  
+    public void onLoad(CupResults result){
+    }
+  
+  
+}
+
+If you want to get multiple endpoints of an api in the same activity you can also use java lambda terms.
+  
+```java
+...
+myAPI.loadModelClass1(this::onLoad);
+myAPI.loadModelClass2(this::onLoad);
+...
+  
+public void onLoad(ModelClass1 result){}
+  
+public void onLoad(ModelClass2 result){}
+  
 ```
 
 
