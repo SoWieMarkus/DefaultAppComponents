@@ -286,7 +286,7 @@ public abstract class MyItemActivity extends CreateItemActivity<MyItem> {
     }
 
     // first call
-    public void binViews(){
+    public void bindViews(){
         // bind your views
     }
   
