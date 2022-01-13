@@ -13,7 +13,7 @@ But if you want to use my API library you may need the <a href="https://github.c
 
 Create a model class for every "class" you will get from your API. 
 
-Example from my <a href="https://github.com/SoWieMarkus/TrackmaniaCOTDApp">Trackmania API</a>:
+Example from my <a href="https://github.com/SoWieMarkus/TrackmaniaCOTDApp">Trackmania Cup ot the Day App</a>:
 
 http://sowiemarkus.com:8080/cotd/2021/1/29
 
