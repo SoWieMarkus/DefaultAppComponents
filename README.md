@@ -224,6 +224,15 @@ System.out.println(result.isValid()); // -> true
 System.out.println(result2.isValid()); // -> false
 System.out.println(result.getErrorMessage()); // -> null
 System.out.println(result2.getErrorMessage()); // -> "Does not contain 'AAA'"
+  
+validator.add(new MaxLengthValidatorArgument(3, "Too long");
+result = validator.validate("bbbAAA");
+result2 = validator.validate("bbbAAA");
+  
+System.out.println(result.isValid()); // -> false
+System.out.println(result2.isValid()); // -> false
+System.out.println(result.getErrorMessage()); // -> "Too long"
+System.out.println(result2.getErrorMessage()); // -> "Too long"
 ```
 
 
