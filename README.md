@@ -232,7 +232,7 @@ result2 = validator.validate("bbbAAA");
 System.out.println(result.isValid()); // -> false
 System.out.println(result2.isValid()); // -> false
 System.out.println(result.getErrorMessage()); // -> "Too long"
-System.out.println(result2.getErrorMessage()); // -> "Too long"
+System.out.println(result2.getErrorMessage()); // -> "Does not contain 'AAA'", because first argument is ContainsAAAArgument
 ```
   
 ## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities">Structured activity</a>
