@@ -2,6 +2,13 @@
 
 This library is a collection of some components which I use in nearly every of my projects.
 
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
+
 ## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/api">API</a>
 
 In many android apps I have to implement an API. Because I like to write my own libraries I don't use libraries like <a href="https://square.github.io/retrofit/">Retrofit</a>.
