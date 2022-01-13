@@ -138,6 +138,8 @@ public class MainActivity extends AppCompatActivity implements ApiResult<CupResu
   
   
 }
+  
+```
 
 If you want to get multiple endpoints of an api in the same activity you can also use java lambda terms.
   
