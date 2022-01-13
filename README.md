@@ -63,8 +63,6 @@ public class CupResults {
     public CupResults(){}
   
     // Add getter and setter
-
-
 }
 ```
 
@@ -80,8 +78,6 @@ public class PlayerResult {
     public PlayerResult(){}
   
     // Add getter and setter
-
-
 }
 ```
 
