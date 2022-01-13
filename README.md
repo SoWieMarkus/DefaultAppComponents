@@ -213,6 +213,18 @@ if (result.isValid()) {
 }
   
 ```
+  
+  ```java
+  
+validator.add(new ContainsAAAArgument());
+ValidatorResult result = validator.validate("bbbAAA");
+ValidatorResult result2 = validator.validate("bbbAA");
+  
+System.out.println(result.isValid()); // -> true
+System.out.println(result2.isValid()); // -> false
+System.out.println(result.getErrorMessage()); // -> null
+System.out.println(result2.getErrorMessage()); // -> "Does not contain 'AAA'"
+```
 
 
 
