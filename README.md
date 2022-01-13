@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements ApiResult<CupResu
     }
   
     public void onLoad(CupResults result){
+        // Handle result
     }
   
   
