@@ -234,6 +234,90 @@ System.out.println(result2.isValid()); // -> false
 System.out.println(result.getErrorMessage()); // -> "Too long"
 System.out.println(result2.getErrorMessage()); // -> "Too long"
 ```
+  
+## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities">Structured activity</a>
+  
+I like my android activities structred. That's why I create the <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities/DefaultActivity.java">DefaultActivity</a> class. 
+  
+```java
+public class MyActivity extends DefaultActivity {
+  
+  private View myView;
+  
+  // create constructor with layout res
+  public MyActivity(){
+      super(R.layout.my_activity);
+  }
+  
+  // first call in super on create
+  public void bindViews() {
+      myView = findViewById(R.id.my_view);
+  }
+
+  //called after bindViews
+  public void initializeViews() {
+      myView.setOnClickListener(...);
+  }
+
+  //called after initializeViews
+  public void execute() {
+      // e.g. execute api call
+  }
+  
+}
+```
+  
+Based on this DefaultActivity I have created the <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities/CreateItemActivity.java">CreateItemActivity</a>, because very often I need a new activity where I can add or edit a item. It will automatically create menu with save and discard in the ActionBar.
+  
+```java
+  
+public class MyItem implements Serializeable {}
+  
+startActivityForResult(new Intent(this, MyItemActivity.class).putExtra(CreateItemActivity.OBJECT_TO_EDIT, item));
+
+public abstract class MyItemActivity extends CreateItemActivity<MyItem> {
+
+    public MyItemActivity() {
+        super(R.layout.my_item_layout);
+    }
+
+    // first call
+    public void binViews(){
+        // bind your views
+    }
+  
+    // called if we passed an item via an intent to this activity
+    public void initializeViewsEditMode() {
+        // set up edit texts etc. with attributes of item
+    }
+
+    // called if no item was passed via intent so we want to create a new item
+    public void initializeViewsAddMode() {
+        // set up blank
+    }
+
+    // After we call commitItem() this method will check if our item is valid
+    // if this method returns true the activity will finish and the result will be send as result
+    protected boolean validateItem() {
+        // check the attributes
+        return true;
+    }
+
+    // User pressed save
+    protected abstract void onCommitItem() {
+        // set / update the attributes of our item
+        commitItem();
+    }
+}
+  
+// parent activity
+onActivityResult(...){
+    MyItem item = intent.getSerializableExtra(CreateItemActivity.RESULT);
+   
+}
+```
+  
+
 
 
 
