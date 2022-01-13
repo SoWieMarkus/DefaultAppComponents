@@ -272,8 +272,12 @@ Based on this DefaultActivity I have created the <a href="https://github.com/SoW
 ```java
   
 public class MyItem implements Serializeable {}
-  
-startActivityForResult(new Intent(this, MyItemActivity.class).putExtra(CreateItemActivity.OBJECT_TO_EDIT, item));
+
+// Start the CreateItemActivity from parent activity
+// edit
+startActivityForResult(new Intent(this, MyItemActivity.class).putExtra(CreateItemActivity.OBJECT_TO_EDIT, item), your_code);
+// create
+startActivityForResult(new Intent(this, MyItemActivity.class), your_code);
 
 public abstract class MyItemActivity extends CreateItemActivity<MyItem> {
 
@@ -310,10 +314,10 @@ public abstract class MyItemActivity extends CreateItemActivity<MyItem> {
     }
 }
   
-// parent activity
+// get result in parent activity
 onActivityResult(...){
     MyItem item = intent.getSerializableExtra(CreateItemActivity.RESULT);
-   
+    
 }
 ```
   
