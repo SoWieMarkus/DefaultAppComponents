@@ -267,6 +267,37 @@ public class MyActivity extends DefaultActivity {
 }
 ```
   
+The same principal is used for Fragments inside the DefaultFragment. (I know Android Studio wants you to create with static method new instance). Interesting is also, that I implemented the "findViewById" function for Fragments. For that I store the view after it got inflated.
+  
+```java
+public class MyFragment extends DefaultFragment {
+
+    public MyFragemnt(){
+        super(R.layout.my_layout);
+    }
+    
+    //called first, bind your views
+    public void bindViewss(){
+        // you can use findViewById here!
+        ...
+        view = findViewById(R.id.my_id);
+  
+      
+    }
+  
+    // set up your views
+    public void initializeViews(){
+        // load images
+        // set text etc.
+    }
+  
+    public void execute(){
+    
+    }
+  
+}
+```
+  
 Based on this DefaultActivity I have created the <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/activities/CreateItemActivity.java">CreateItemActivity</a>, because very often I need a new activity where I can add or edit a item. It will automatically create menu with save and discard in the ActionBar.
   
 ```java
