@@ -159,6 +159,60 @@ public void onLoad(ModelClass2 result){}
 
 ## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/textinputvalidator">TextInputValidator</a>
 
+Very often I have to verify if a String from an EditText does fit some requirements. For this I created the TextInputValidator library.
+  
+### Example
+  
+#### 1. Initialize the TextInputValidator
+  
+First of all we have to initialize the TextInputValidator. Therefore we create an instance of the class and add "arguments" to it. There are already some given arguments <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/textinputvalidator/arguments">here</a>
+  
+```java
+
+// first create instance of TextInputValidator
+TextInputValidator validator = new TextInputValidator();
+  
+// add the argument max length
+// will check if the string size is smaller or equal to 20
+validator.add(new MaxLengthValidatorArgument(20, "ERROR_MESSAGE");
+...
+  
+ 
+```
+  
+You can also create your own arguments. 
+  
+```java
+  
+// for example "contains the substring 'aaa'"
+public class ContainsAAAArgument extends TextInputValidatorArgument {
+
+    public ContainsAAAArgument() {
+        super("Does not contain 'AAA'");
+    }
+
+
+    @Override
+    public boolean validate(String string) {
+        return string.contains("AAA");
+    }
+}
+
+```
+  
+2. Check if a string matches all requirements
+  
+```java
+  
+ValidatorResult result = validator.validate(ýourString);
+if (result.isValid()) {
+    // does match all requirements
+} else {
+    // Soemthing went wrong
+    throw new Exception(result.getErrorMessage());
+}
+  
+```
 
 
 
