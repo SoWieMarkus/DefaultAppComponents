@@ -432,6 +432,24 @@ class Item implements QueryableEntity<Long> {
     
 The adapter then needs to implement <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableAdapter.java">QueryableAdapter</a>. The three generics are: class of the id of the item, the item class, the view holder class which extends DefaultViewHolder<Item>.
   
+## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/viewpager"> ViewPageAdapter</a>
+
+A custom ViewPageAdapter is something I used very often in the past. So I made a easy to use ViewPagerAdapter (even if the ViewPager is deprecated). The adapter uses the _ViewPageAdapterItem_. It consist of a fragment and a title. The fragment will be shown when the page is selected. The title is the String that is displayed in the TabLayout.
+
+<img src="https://androidwave.com/wp-content/uploads/2019/08/android-viewpager-with-tabs.png" alt="ViewPager" />
+  
+```java
+
+// from the example above it would look like this:
+List<ViewPageAdaperItem> items = new ArrayList<>();
+items.add(new ViewPageAdpaterItem("Speed Dial", fragment1));
+items.add(new ViewPageAdpaterItem("Recent", fragment2));
+items.add(new ViewPageAdpaterItem("Contacts", fragment3)); 
+ 
+ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(), items);
+ 
+```
+  
   
 
 
