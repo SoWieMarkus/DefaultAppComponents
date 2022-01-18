@@ -352,9 +352,85 @@ onActivityResult(...){
 }
 ```
   
+## <a href="https://github.com/SoWieMarkus/DefaultAppComponents/tree/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter">Smart Adapter</a>
+  
+I very often use RecyclerViews and have to develop a adapter for the RecyclerView. So I developed a easier to use version. Therefore you need a class which you want to display in with the adapter. In the example it would be the class "Item"
+  
+### Example
+  
+```java
+public class SmartAdapter extends DefaultAdapter<Item, SmartAdapter.SmartViewHolder> {
 
+    // There are already some InteractionListener that can be set here
+    public SmartAdapter(OnItemInteractListener<Type> onItemInteractListener) {
+        super(onItemInteractListener);
+    }
 
+    @NonNull
+    @Override
+    public LevelBuilderItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new LevelBuilderItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_level_builder, parent, false));
+    }
+  
+    // Override the Getter method so you can get the correct InteractionListener
+    @Override
+    public OnItemClickListener<Type> getOnItemInteractListener() {
+        return (OnItemClickListener<Type>) super.getOnItemInteractListener();
+    }
 
+    public class SmartViewHolder extends DefaultViewHolder<Item> {
+
+        private TextView textView;
+
+        public SmartViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+
+        @Override
+        public void bindViews() {
+            // Again the store is saved in the super class
+            // Based on this there is again a find view by id method that you can call here
+            // you dont have to call itemView.findViewByIf(...)
+            textView = findViewById(R.id.text_view);
+        }
+
+        @Override
+        public void bindItemToViewHolder(Item item) {
+            // update the view
+            textViews.setText(item.toString());
+        }
+
+    }
+}
+```
+
+Often the list changes dynamically because a new item got inserted. In that case you can use my _QueryableAdapter_. This will automatically animate changes inside the RecyclerView. But the "Item" class needs to implement <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableEntity.java">QueryableEntity</a>. This will give the Entity an id and a method to check with a possible query if you search for a item inside a list. The Id is needed to identify a element inside a list (is it new? is it missing? did it change position?). The generic class T is the class of the id. Some ids might be a String, some might be a Long. Thats why it's designed as a Generic.
+
+```java
+class Item implements QueryableEntity<Long> {
+    
+  private Long id;
+  private String text;
+  
+  public Item(Long id, String text) {
+    this.id = id;
+    this.text = text;
+  }
+  
+  public Long getId(){
+    return id;
+  }
+  
+  public String getStringToApplyQuery() {
+    return text;
+  }
+}
+  
+The adapter then needs to implement <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableAdapter.java">QueryableAdapter</a>. The three generics are: class of the id of the item, the item class, the view holder class which extends DefaultViewHolder<Item>.
+  
+
+```
+  
 
 
 
