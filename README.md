@@ -417,10 +417,12 @@ class Item implements QueryableEntity<Long> {
     this.text = text;
   }
   
+  @Override
   public Long getId(){
     return id;
   }
   
+  @Override
   public String getStringToApplyQuery() {
     return text;
   }
