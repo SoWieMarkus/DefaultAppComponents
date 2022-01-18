@@ -425,11 +425,11 @@ class Item implements QueryableEntity<Long> {
     return text;
   }
 }
-  
-The adapter then needs to implement <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableAdapter.java">QueryableAdapter</a>. The three generics are: class of the id of the item, the item class, the view holder class which extends DefaultViewHolder<Item>.
-  
 
 ```
+    
+The adapter then needs to implement <a href="https://github.com/SoWieMarkus/DefaultAppComponents/blob/master/defaultAppComponents/src/main/java/markus/wieland/defaultappelements/uielements/adapter/QueryableAdapter.java">QueryableAdapter</a>. The three generics are: class of the id of the item, the item class, the view holder class which extends DefaultViewHolder<Item>.
+  
   
 
 
